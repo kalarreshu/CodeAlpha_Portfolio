@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Responsive personal portfolio webbsite</title>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	 
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			text-decoration: none;
+			border: none;
+			outline: none;
+			scroll-behavior: smooth;
+			font-family: poppins,sans-serif;
+		}
+		:root {
+			--bg-color:#081b29;
+			--second-bg-color:#112e42;
+			--text-color:#ededed;
+			--main-color:#00abf0;
+		}
+		html{
+			font-size: 62.5%;
+
+		}
+		body {
+			background: var(--bg-color);
+			color: var(--text-color);
+		}
+		.header{
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             padding: 2rem 9%;
+             background: transparent;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             z-index:100 ;
+		}
+		.logo{
+			font-size:5rem;
+			color: var(--text-color);
+			font-weight: 600;
+			font-style: italic;
+			font-family: brush script mt;
+
+
+
+		}
+		.logo:hover{
+			font-size: 5.3rem;
+		}
+		.navbar ul li  {
+			font-size: 2rem;
+			color: var(--text-color);
+			font-weight: 500;
+			transition: .3s;
+			display: inline-block;
+			justify-content: space-between;
+			align-items: center;
+			list-style: none;
+			margin: 15px 25px;
+		}
+		.navbar ul li a{
+			text-decoration: none;
+			font-weight: bold;
+			color: white;
+			position: relative;
+		}
+
+		.navbar a:hover,
+		.navbar a active {
+			color: var(--main-color);
+		}
+		.navbar li a::after,.navbar .active::after{
+			content: " ";
+			position: absolute;
+			background: #fff;
+			width: 100%;
+			height: .1rem;
+			left: 0;
+			bottom: -5px;
+			transform: scaleX(0);
+			transform-origin: bottom right;
+			transition: transform .5s;
+		}
+		.navbar li a:hover::after,.navbar .active::after{
+			transform: scaleX(1.0);
+			transform-origin: bottom left;
+		}
+		#menu-icon{
+			font-size: 20px;
+			color: var(--text-color);
+			cursor: pointer;
+			display: flex;
+		}
+		section{
+			min-height: 100vh;
+			padding: 10rem 9% 2rem;
+		}
+		.home{
+			display: flex;
+			align-items: center;
+			padding: 0 9%;
+		}
+		span{
+			color: var(--main-color);
+		}
+		.R{
+			color: var(--main-color);
+			font-size:52px;
+		}
+		.R:hover{
+			font-size: 54px;
+		}
+		.home-content{
+			max-width: 60rem;
+		}
+		.home-content h1{
+			font-size: 5.6rem;
+			font-weight: 700;
+			line-height: 1.3;
+           }
+           .home-content .text-animate{
+           	position: relative;
+           	width: 32.8rem;
+           }
+           .home-content .text-animate h3{
+           	font-size: 3.2rem;
+           	font-weight: 700;
+           	color: transparent;
+           	-webkit-text-stroke:.7px var(--main-color);
+           	background-image: linear-gradient(var(--main-color),var(--main-color));
+           	background-repeat: no-repeat;
+           	-webkit-background-clip:text;
+           	background-position: 0 0;
+           	animation: homeBgText 6s linear infinite;
+             	animation-delay: 2s;
+           }
+           .home-content .text-animate h3::before{
+           	    content: '';
+             	position: absolute;
+             	top: 0;
+             	left: 0;
+             	width: 0;
+             	height: 100%;
+             	border-right:2px solid var(--main-color) ;
+             	z-index: -1;
+             	animation: homeCuesorText 6s linear infinite;
+             	animation-delay: 2s;
+
+           }
+          .home-content p{
+          	font-size: 1.6rem;
+          	margin: 2rem 0 4rem;
+          }
+          .btn-box{
+          	  position: relative;
+          	  display: flex;
+          	  justify-content: space-between;
+          	  width: 34.5rem;
+          	  height: 5rem;
+          }
+          .btn-box .btn{
+          	position: relative;
+          	display: inline-flex;
+          	justify-content: center;
+          	align-items: center;
+          	width: 15rem;
+          	height: 100%;
+          	background: var(--main-color);
+          	border:.2rem solid var(--main-color) ;
+          	border-radius: .8rem;
+          	font-size: 1.8rem;
+          	font-weight: 600;
+          	letter-spacing: .1rem;
+          	color:var(--bg-color) ;
+          	z-index: 1;
+          	overflow: hidden;
+          	transition: .5s;
+          }
+          .btn-box .btn:hover{
+          	color: var(--main-color);
+          }
+          .btn-box .btn:nth-child(2){
+          	background: transparent;
+          	color: var(--main-color);
+          }
+           .btn-box .btn:nth-child(2):hover{
+           	color: var(--bg-color);
+           }
+           .btn-box .btn:nth-child(2)::before{
+           	background: var(--main-color);
+           }
+          .btn-box .btn::before{
+          	content: '';
+          	position: absolute;
+          	top: 0;
+          	left: 0;
+          	width: 0%;
+          	height: 100%;
+          	background: var(--bg-color);
+          	z-index: -1;
+          	transition: .5s;
+          }
+          .btn-box .btn:hover::before{
+          	width: 100%;
+          }
+
+         .home-sci{
+          	position: absolute;
+          	bottom: 4rem;
+          	width: 190px;
+          	display: flex;
+          	justify-content: space-between;
+          }
+          .home-sci a{
+          	position: relative;
+          	display: inline-flex;
+          	justify-content: center;
+          	align-items: center;
+          	width: 40px;
+          	height: 40px;
+          	background: transparent;
+          	border:.2rem solid var(--main-color);
+          	border-radius: 50%;
+          	font-size: 20px;
+          	color: var(--main-color);
+          	z-index: 1;
+          	overflow: hidden;
+          	transition: .5s;
+         	margin: 10px 15px 10px 0;
+             }
+           .home-sci a:hover{
+                   color: var(--bg-color);     
+            } 
+             .home-sci a::before {
+             	content: '';
+             	position: absolute;
+             	top: 0;
+             	left: 0;
+             	width: 0;
+             	height: 100%;
+             	background:var(--main-color);
+             	z-index: -1;
+             	transition: .5s;
+               
+               }
+             .home-sci a:hover::before{
+             	width: 100%;
+             }
+             .design .circle{
+             	aspect-ratio: 1;
+             	position: absolute;
+             	border-radius: 50%;
+             	top: 50%;
+             	left: 70%;
+             	transform: translate(-50%,-50%);
+
+             }
+             .circle:nth-child(1){
+             	background: linear-gradient( 90deg,transparent 50%,transparent 50%);
+             	width:40rem;
+             }
+             .circle:nth-child(2){
+             	background-image: url('reshu.jpg');
+             	width: 32rem;
+             	background-size: 100%;
+             	background-repeat: no-repeat;
+             	border: .5rem solid white;
+             	box-shadow: 0 0 1rem #fff,inset 0 0 1rem #fff,0 0 1.5rem #3877ff,inset 0 0 1.5rem #3877ff,0 0 3rem #3877ff,inset 0 0 3rem #3877ff ;
+
+             }
+             .circle:nth-child(2):hover{
+             	width: 40rem;
+             	transition-duration: 4s;
+		transition-timing-function: ease;
+		 }
+/*             KEYFRAMES ANIMATION*/
+           @keyframes homeBgText {
+           	0%,
+           	10%,
+           	100% {
+           		background-position: -33rem 0;
+           	}
+           	65%,
+           	85%{
+           		background-position: 0 0;
+           	}
+           }
+            @keyframes homeCursorText {
+           	0%,
+           	10%,
+           	100% {
+           		width: 0;
+           	}
+           	65%,
+           	75%,
+           	85%{
+           		width:100%;
+           		opacity: 1;
+           	}
+           	75%,
+           	85%{
+           		opacity: 0;
+           	}
+           }
+
+             
+
+
+
+	</style>
+</head>
+<body>
+ <header class="header">
+	<a href="#" class="logo"><span class="R">R</span>eshu <span class="R">R</span>ai</a>
+	<!-- <div class="bx bx-menu" id="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></div> -->
+	<nav class="navbar"><ul>
+		<li><a href="index1.html" class="active">Home</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="resume.html">Resume</a></li>
+		<li><a href="project.html">Project</a></li>
+		<li><a href="con.html">Contact</a></li>
+		
+	</nav>
+</ul>
+</header>
+<section class="home">
+	<div class="home-content">
+		<h1>Hi,I'm Reshu <span> Rai</span></h1>
+		<div class="text-animate">
+		<h3>Frontend Developer</h3>
+	</div>
+	<p>This is my official Portfolio website to showcase my all works related to web development and design. </p>
+		<div class="btn-box">
+			<a href="#" class="btn">Hire Me</a>
+			<a href="#" class="btn">Let's Talk</a>
+		</div>
+        <div class="home-sci">
+        	<a href="https://www.facebook.com/devrai.devrai.129142?mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
+        	<a href="#"><i class='bx bxl-twitter'></i></a>
+        	<a href="#"><i class='bx bxl-linkedin'></i></a>
+        	<a href="#"><i class='bx bxl-instagram'></i></a>
+         </div>
+         <div class="design">
+         	<div class="circle"></div>
+         	<div class="circle"></div>
+         </div>
+	
+</section>
+</body>
+</html>
