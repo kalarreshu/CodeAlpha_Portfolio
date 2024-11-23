@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			text-decoration: none;
+			border: none;
+			outline: none;
+			scroll-behavior: smooth;
+			font-family: poppins,sans-serif;
+		}
+		:root {
+			--bg-color:#081b29;
+			--second-bg-color:#112e42;
+			--text-color:#ededed;
+			--main-color:#00abf0;
+		}
+		html{
+			font-size: 62.5%;
+
+		}
+		body {
+			background: var(--bg-color);
+			color: var(--text-color);
+		}
+		.header{
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             padding: 2rem 9%;
+             background: transparent;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             z-index:100 ;
+		}
+		.logo{
+			font-size:5rem;
+			color: var(--text-color);
+			font-weight: 600;
+
+		}
+		.logo:hover{
+			font-size: 5.3rem;
+		}
+		.navbar ul li  {
+			font-size: 2rem;
+			color: var(--text-color);
+			font-weight: 500;
+			transition: .3s;
+			display: inline-block;
+			justify-content: space-between;
+			align-items: center;
+			list-style: none;
+			margin: 15px 25px;
+		}
+		.navbar ul li a{
+			text-decoration: none;
+			font-weight: bold;
+			color: white;
+			position: relative;
+		}
+
+		.navbar a:hover,
+		.navbar a active {
+			color: var(--main-color);
+		}
+		.navbar li a::after,.navbar .active::after{
+			content: " ";
+			position: absolute;
+			background: #fff;
+			width: 100%;
+			height: .1rem;
+			left: 0;
+			bottom: -5px;
+			transform: scaleX(0);
+			transform-origin: bottom right;
+			transition: transform .5s;
+		}
+		.navbar li a:hover::after,.navbar .active::after{
+			transform: scaleX(1.0);
+			transform-origin: bottom left;
+		}
+		#menu-icon{
+			font-size: 20px;
+			color: var(--text-color);
+			cursor: pointer;
+			display: flex;
+		}
+		section{
+			min-height: 100vh;
+			padding: 10rem 9% 2rem;
+		}
+		.home{
+			display: flex;
+			align-items: center;
+			padding: 0 9%;
+		}
+		span{
+			color: var(--main-color);
+		}
+		.R{
+			color: var(--main-color);
+			font-size:52px;
+		}
+		.R:hover{
+			font-size: 54px;
+		}
+
+/*		prijectttt*/
+
+		body{
+			background: #081b29;
+		}
+		#portfolio{
+			padding: 50px 0;
+		}
+		.subtitle{
+			font-size: 50px;
+			text-align: center;
+			margin-top: 50PX;
+			color: #00abf0;
+			text-shadow: 2px 2px 4px white;
+
+		}
+		.Work-list{
+			display: grid;
+			grid-template-columns: repeat(auto-fit,minmax(250px,5fr));
+			grid-gap: 80px;
+			margin-top: 50px;
+			padding: 20px;
+			margin-left: 40px;
+		}
+		.Work{
+			border-radius:10px;
+			position: relative;
+			overflow: hidden;
+		}
+		.Work img{
+/*            width: 100%;*/
+            border-radius: 15px;
+            display: block;
+            box-shadow: 4px 4px 10px white;
+           /* height: 350px;
+            width: 500px;*/
+		}
+		.layer{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(rgba(0,0,0,0.6),#081b29);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 10px;
+			overflow: hidden;
+			flex-direction: column;
+			padding: 0 4rem;
+			text-align: center;
+			font-size: 14px;
+			transform: translateY(100%);
+			transition: .5s ease;
+		}
+		.Work:hover .layer{
+			transform: translateY(0);
+		}
+		.layer h3{
+			font-weight: 500;
+			margin-bottom: 20px;
+			color:var(--main-color);
+			margin-left: 5px;
+			font-size: 25px;
+			margin-right: 40px;
+			text-shadow: 2px 2px 2px black;
+
+
+		}
+		.layer p{
+			color: #ededed;
+/*			margin: .3rem 0 1rem;*/
+            margin-left: 0px;
+/*            text-align:left;*/
+            font-size: 20px;
+            margin-right: 20px;
+		}
+		.layer a{
+			width:50px;
+			height: 50px;
+			background:whitesmoke;
+			border-radius: 50%;
+			margin-top: 20px;
+			color:#081b29;
+			text-decoration: none;
+			font-size: 18px;
+			line-height: 60px;
+			text-align: center;
+			margin-bottom: 10px;
+			margin-right: 40px;
+		}
+		.Work:hover img{
+			transform: scale(1.1);
+
+		}
+		.Work:hover .layer{
+			height: 100%;
+		}
+
+
+	</style>
+</head>
+<body>
+    <header class="header">
+	<a href="#" class="logo"><span class="R">R</span>eshu <span class="R">R</span>ai</a>
+	<!-- <div class="bx bx-menu" id="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></div> -->
+	<nav class="navbar"><ul>
+		<li><a href="index1.html" class="active">Home</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="resume.html">Resume</a></li>
+		<li><a href="project.html">Project</a></li>
+		<li><a href="con.html">Contact</a></li>
+		
+	</nav>
+</ul>
+</header>
+
+	<!-- PROJECTTTT -->
+ <div id="portfolio">
+	<div class="container">
+		<h1 class="subtitle">My Work</h1>
+		<div class="Work-list">
+			<div class="Work">
+				<img src="carousel.jpeg" width="400px " height="260px">
+				<div class="layer">
+					<h3>Carousel</h3>
+					<p>With carousel,you can show multiple images,videos or combination of oth within a single post.</p>
+					<a href="class4.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+			<div class="Work">
+				<img src="imglry.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>Image Gallery Hoverable</h3>
+					<p>It is a collection of images which expands vertically on hover animation .</p>
+					<a href="clss8.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+			<!-- <div class="Work">
+				<img src="website.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>Hospital Website</h3>
+					<p>Hospital of jabalpur which have all facilities and experienced doctors.</p>
+					<a href="index.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div> -->
+			<div class="Work">
+				<img src="rotategallery.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>3D Image Gallery</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+					<a href="rotategallery.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+			<div class="Work">
+				<img src="cardgalry.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>Image Card</h3>
+					<p>Image card of Indian historical places which are famous across the world .</p>
+					<a href="im2gallery.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+			
+			<div class="Work">
+				<img src="bar.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>Sidebar hoverable</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+					<a href="hovercolor.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+			<div class="Work">
+				<img src="book.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>Book Transition</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+					<a href="bookopenanim.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+			<div class="Work">
+				<img src="bk.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>Card</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+					<a href="blur.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+			
+			
+			<div class="Work">
+				<img src="3img.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>Float</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+					<a href="3img.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+			
+			<div class="Work">
+				<img src="card.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>Image Card</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+					<a href="imgcard.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+
+			<div class="Work">
+				<img src="downn.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>Form</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+					<a href="contactus.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+			<div class="Work">
+				<img src="kbc2.jpeg" width="260px " height="260px">
+				<div class="layer">
+					<h3>KBC Card</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+					<a href="kbc.html"><i class="fas fa-external-link-alt"></i></a></div>
+			</div>
+			</div>
+
+
+
+
+</body>
+</html>
